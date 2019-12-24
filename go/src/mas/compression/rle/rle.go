@@ -1,16 +1,24 @@
 package rle
 
+import (
+	"strconv"
+)
+
 func Encode(s string) string {
 	ret := ""
 	prev := ""
 	count := 0
 	for _, curr := range s {
 		if string(curr) != prev && count != 0 {
-			ret += string(count) + prev
+			ret += strconv.Itoa(count) + prev
 			count = 0
-			continue
+		} else {
+			prev = string(curr)
+			count++
 		}
-		count++
+	}
+	if count != 0 {
+		ret += strconv.Itoa(count) + prev
 	}
 	return ret
 }

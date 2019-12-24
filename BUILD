@@ -1,3 +1,4 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-gazelle(name = "masrepo")
+# gazelle:prefix github.com/thomask-m/masrepo
+gazelle(name = "gazelle")
