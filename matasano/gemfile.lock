@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    sorbet (0.4.4250)
+    sorbet-runtime (0.5.6111)
+
+PLATFORMS
+  ruby
+  x86-mingw32
+
+DEPENDENCIES
+  sorbet
+  sorbet-runtime
+
+BUNDLED WITH
+   2.1.4
