@@ -36,7 +36,14 @@ class Util
     end
     res
   end
+
+  sig { params(a: String, b: String).returns(String)}
+  def fixed_xor(a, b)
+    num_a = a.to_i(16)
+    num_b = b.to_i(16)
+    res = num_a ^ num_b
+    res.to_s(16)
+  end
 end
 
-hex = '49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d'
-p Util.new.hex_to_b64(hex)
+p Util.new.fixed_xor("1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965")
