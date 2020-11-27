@@ -44,6 +44,14 @@ class Util
     res = num_a ^ num_b
     res.to_s(16)
   end
-end
 
-p Util.new.fixed_xor("1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965")
+  sig { params(str: String, len: Integer).returns(String) }
+  def repeat_char_by_len(str, len)
+    str * len
+  end
+
+  sig { params(str: String).returns(String) }
+  def hex_str_to_ascii(str)
+    [str].pack('H*')
+  end
+end
