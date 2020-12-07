@@ -45,13 +45,25 @@ class Util
     res.to_s(16)
   end
 
-  sig { params(str: String, len: Integer).returns(String) }
-  def repeat_char_by_len(str, len)
-    str * len
+  sig { params(c: String, len: Integer).returns(String) }
+  def repeat_char_by_len(c, len)
+    c * len
   end
 
   sig { params(str: String).returns(String) }
   def hex_str_to_ascii(str)
     [str].pack('H*')
+  end
+
+  sig { params(hex_str: String).returns(Integer) }
+  def evaluate_code(hex_str)
+    score = 0
+    hex_chunks = hex_str.scan(/.{2}/)
+    hex_chunks.each do |chunk|
+      unless chunk.is_a? Array
+        # what to do here?
+      end
+    end
+    score
   end
 end
